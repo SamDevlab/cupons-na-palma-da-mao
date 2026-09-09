@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="registro.css" />
+  </head>
+  <body class="registro-body">
+    <main class="registro-shell">
+      <section class="registro-app">
+        <header class="registro-topbar">
+          <a class="icon-button registro-home-button" href="/" aria-label="Voltar para benefícios">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/><path d="M8 21v-6h8v6"/></svg>
+          </a>
+        </header>
+        <div class="registro-content">
+          <section class="access-card" id="accessCard" aria-label="Formulário de senha">
+            <form id="loginForm">
+              <label class="registro-field">
+                <span>Senha</span>
+                <input id="password" type="password" autocomplete="current-password" required />
+              </label>
+              <button class="registro-primary" type="submit">Entrar</button>
+              <p class="login-error" id="loginError" role="alert"></p>
+            </form>
+          </section>
+
+          <section class="registro-dashboard" id="dashboard" hidden>
+        <div class="dashboard-heading">
+          <div>
+            <p class="eyebrow">cadastro</p>
+            <h1>Parceiros</h1>
+          </div>
+          <button class="registro-primary new-button" id="newPartner" type="button">+ Novo parceiro</button>
+        </div>
+
+        <form class="partner-form" id="partnerForm" hidden>
+          <h2 id="formTitle">Cadastrar parceiro</h2>
+          <div class="registro-form-grid">
+            <label class="registro-field full-field">
+              <span>Nome</span>
+              <input id="partnerName" name="name" type="text" placeholder="Ex.: Café do Centro" required />
+            </label>
+            <label class="registro-field">
+              <span>Categoria</span>
+              <input id="partnerCategory" name="category" type="text" placeholder="Ex.: Alimentação" required />
+            </label>
+            <label class="registro-field">
+              <span>Benefício</span>
+              <input id="partnerOffer" name="offer" type="text" placeholder="Ex.: 10% de desconto" required />
+            </label>
+            <label class="registro-field">
+              <span>Cor</span>
+              <input id="partnerColor" name="color" type="color" value="#7b6eea" />
+            </label>
+            <label class="registro-field">
+              <span>Ícone em texto (opcional)</span>
+              <input id="partnerIcon" name="icon" type="text" maxlength="3" placeholder="Ex.: ☕ ou CD" />
+            </label>
+            <label class="registro-field full-field">
+              <span>Imagem do ícone (opcional)</span>
+              <input id="partnerIconImage" name="iconImage" type="file" accept="image/png,image/jpeg,image/webp,image/gif" />
+              <small class="field-help">Envie uma imagem para substituir o ícone em texto.</small>
+              <div class="icon-upload-preview" id="iconUploadPreview" hidden>
+                <img id="iconPreviewImage" alt="Prévia do ícone" />
+                <button class="registro-secondary remove-image-button" id="removeIconImage" type="button">Remover imagem</button>
+              </div>
+              <p class="field-error" id="iconImageError" role="alert"></p>
+            </label>
+          </div>
+          <div class="form-actions">
+            <button class="registro-secondary" id="cancelForm" type="button">Cancelar</button>
+            <button class="registro-primary" id="saveForm" type="submit">Salvar parceiro</button>
+          </div>
+        </form>
+
+        <ol class="partner-list" id="partnerList"></ol>
+          </section>
+        </div>
+      </section>
+    </main>
+    <script src="registro.js"></script>
+  </body>
+</html>

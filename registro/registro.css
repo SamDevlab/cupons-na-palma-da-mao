@@ -1,0 +1,58 @@
+.registro-body { min-height: 100vh; padding: 34px; display: grid; place-items: center; }
+.registro-shell { position: relative; width: min(1400px, 100%); }
+.registro-app { min-height: min(850px, calc(100vh - 68px)); overflow: hidden; border: 1px solid rgba(31, 37, 37, .08); border-radius: 28px; background: var(--paper); box-shadow: var(--shadow); display: flex; flex-direction: column; }
+.registro-topbar { min-height: 92px; padding: 0 34px; border-bottom: 1px solid var(--line); display: flex; align-items: center; }
+.registro-home-button { text-decoration: none; }
+.registro-content { width: 100%; flex: 1; min-height: 0; padding: 44px 22px; display: grid; place-items: center; background: radial-gradient(circle at 50% 44%, rgba(34, 170, 100, .06), transparent 25rem), #fff; }
+.access-card { width: min(470px, 100%); margin: 0 auto; padding: clamp(28px, 5vw, 48px); border: 1px solid var(--line); border-radius: 24px; background: #fff; box-shadow: var(--shadow); }
+#loginForm { display: grid; gap: 16px; }
+.registro-field { display: grid; gap: 8px; }
+.registro-field span { color: var(--ink); font-size: 12px; font-weight: 700; }
+.registro-field input { width: 100%; min-height: 46px; padding: 0 13px; border: 1px solid #dfe5e1; border-radius: 11px; outline: none; color: var(--ink); background: #fcfdfb; font: inherit; font-size: 14px; }
+.registro-field input:focus { border-color: var(--green); box-shadow: 0 0 0 3px rgba(34, 170, 100, .12); }
+.registro-field input[type="color"] { padding: 4px; cursor: pointer; }
+.registro-field input[type="file"] { min-height: auto; padding: 10px 12px; cursor: pointer; background: #fff; }
+.field-help { color: var(--muted); font-size: 11px; line-height: 1.4; }
+.field-error { min-height: 16px; margin: 0; color: var(--red-dark); font-size: 11px; font-weight: 700; }
+.icon-upload-preview { display: flex; align-items: center; gap: 12px; padding: 10px; border: 1px solid #dfe9e2; border-radius: 13px; background: #fff; }
+.icon-upload-preview img { width: 58px; height: 58px; border-radius: 12px; object-fit: cover; }
+.remove-image-button { min-height: 38px; padding: 0 12px; font-size: 12px; }
+.registro-primary, .registro-secondary { min-height: 46px; padding: 0 18px; border-radius: 11px; font: inherit; font-weight: 700; cursor: pointer; }
+.registro-primary { border: 0; color: #fff; background: var(--green); }
+.registro-primary:hover { background: var(--green-dark); }
+.registro-secondary { border: 1px solid #dfe5e1; color: var(--ink); background: #fff; }
+.login-error { min-height: 16px; margin: 0; color: var(--red-dark); font-size: 12px; font-weight: 700; }
+.registro-dashboard { padding: clamp(26px, 5vw, 48px); border: 1px solid var(--line); border-radius: 24px; background: #fff; box-shadow: var(--shadow); }
+.dashboard-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 22px; margin-bottom: 26px; }
+.dashboard-heading h1 { margin: 0; font: 600 clamp(31px, 4vw, 45px)/1 "Space Grotesk", sans-serif; letter-spacing: -.06em; }
+.new-button { white-space: nowrap; }
+.partner-form { margin-bottom: 24px; padding: 22px; border: 1px solid #dfe9e2; border-radius: 16px; background: #f8fcf9; }
+.partner-form h2 { margin: 0 0 18px; color: var(--green-dark); font: 600 20px "Space Grotesk", sans-serif; }
+.registro-form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.full-field { grid-column: 1 / -1; }
+.form-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 18px; }
+.partner-list { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; counter-reset: partner; }
+.partner-row { display: grid; grid-template-columns: 34px minmax(0, 1fr) auto; align-items: center; gap: 14px; padding: 13px 15px; border: 1px solid var(--line); border-radius: 15px; counter-increment: partner; }
+.partner-row::before { content: counter(partner, decimal-leading-zero); color: #a6b0ab; font: 600 12px "Space Grotesk", sans-serif; }
+.partner-info { min-width: 0; }
+.partner-info strong, .partner-info > span { display: block; }
+.partner-info strong { margin-bottom: 4px; font-size: 14px; }
+.partner-info > span { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.partner-icon { display: inline-grid !important; width: 27px; height: 27px; margin-right: 8px; place-items: center; overflow: hidden; border-radius: 8px; color: #fff; background: var(--partner-color); font-size: 10px; vertical-align: middle; }
+.partner-icon img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.partner-actions { display: flex; align-items: center; gap: 6px; }
+.partner-actions button { min-width: 34px; height: 34px; padding: 0 10px; border: 1px solid #dfe5e1; border-radius: 9px; color: var(--ink); background: #fff; font: inherit; font-size: 11px; font-weight: 700; cursor: pointer; }
+.partner-actions button:disabled { color: #c6ceca; background: #f6f8f6; cursor: not-allowed; }
+.partner-actions .remove { color: var(--red-dark); border-color: #f1d3d6; }
+
+@media (max-width: 560px) {
+  .registro-body { padding: 0; }
+  .registro-app { min-height: 100vh; border: 0; border-radius: 0; }
+  .registro-topbar { padding: 0 20px; }
+  .registro-form-grid { grid-template-columns: 1fr; }
+  .full-field { grid-column: auto; }
+  .dashboard-heading { display: block; }
+  .new-button { margin-top: 18px; }
+  .partner-row { grid-template-columns: 25px minmax(0, 1fr); }
+  .partner-actions { grid-column: 2; justify-content: flex-end; }
+}

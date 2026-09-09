@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f8f5" />
+    <title>Cupons na palma da mão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app-shell" id="appShell">
+      <section class="tablet-app" aria-label="Painel de cupons">
+        <header class="topbar is-hidden" id="topbar">
+          <button class="icon-button home-button is-hidden" id="homeButton" aria-label="Voltar para benefícios">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1V10Z"/><path d="M8 21v-6h8v6"/></svg>
+          </button>
+        </header>
+
+        <div class="workspace">
+          <section class="benefits-page page active" id="benefitsPage" aria-label="Escolha de benefício">
+            <div class="business-sidebar">
+              <div class="sidebar-heading">
+                <div>
+                  <p class="eyebrow">benefícios parceiros</p>
+                  <h1>Escolha um benefício</h1>
+                </div>
+                <span class="partner-count" id="partnerCount">03</span>
+              </div>
+              <p class="sidebar-intro">Toque em uma empresa para gerar um cupom.</p>
+              <nav class="business-list" id="businessList" aria-label="Empresas parceiras"></nav>
+            </div>
+          </section>
+
+          <section class="coupon-panel coupon-page page" id="couponPanel" aria-label="Cupom temporário" aria-live="polite"></section>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status"></div>
+
+    <script src="qrcode-lib.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
